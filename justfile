@@ -1,6 +1,12 @@
 set default-list := true
 
+[windows]
 set shell := ["cmd.exe", "/c"]
+
+[unix]
+set shell := ["sh", "-cu"]
+
+
 lint:
 	uv run ruff check src
 	uv run ruff format --check src
