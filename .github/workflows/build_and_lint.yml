@@ -17,11 +17,12 @@ jobs:
           cache-dependency-glob: "./pyproject.toml"
           prune-cache: true
       
-      
+      - name: Install just
+        uses: extractions/setup-just@v3
+
       - name: Install dependencies
         run: |
           uv sync --locked --dev
-          uv tool install just
       
       - name: Run ruff check
         run: just lint
