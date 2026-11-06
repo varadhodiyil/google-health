@@ -30,6 +30,9 @@ jobs:
       - name: Run Type Check
         run: just  type-check
       
+      - name: Setup env file
+        run: cp .env.example .env
+
       - name: Run Tests
         run: just test
 
