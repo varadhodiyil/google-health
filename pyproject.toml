@@ -7,6 +7,7 @@ requires-python = ">=3.14"
 dependencies = [
     "httpx>=0.28",
     "pydantic-settings>=2.16.2",
+    "pytest-cov>=7.1.0",
     "uritemplate>=4.2.0",
 ]
 
@@ -29,6 +30,13 @@ module-root = "src"
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
+
+addopts = [
+    "--cov=src",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+    "--cov-fail-under=45",
+]
 
 [tool.ruff]
 exclude = [
